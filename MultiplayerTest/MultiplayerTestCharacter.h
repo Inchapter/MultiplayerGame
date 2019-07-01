@@ -79,7 +79,7 @@ protected:
 
 	UFUNCTION(BlueprintCallable, Category = "PickUp")
 	void CollectPickups();
-
+	//使用了Server宏则需要实现'函数名_Implementation'函数，该函数将在服务器执行，0
 	UFUNCTION(Reliable, Server, WithValidation)
 	void ServerCollectPickups();
 
@@ -100,7 +100,7 @@ public:
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
-
+	//设置球形碰撞组件
 	FORCEINLINE class USphereComponent* GetCollectionSphere() const { return CollectionSphere; }
 
 private:
